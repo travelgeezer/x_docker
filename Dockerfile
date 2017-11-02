@@ -22,3 +22,4 @@ workdir /home/ubuntu
 RUN git clone git@github.com:travelgeezer/emacs.d.git ~/.emacs.d/
 
 EXPOSE 9000 3141 22 5000
+
