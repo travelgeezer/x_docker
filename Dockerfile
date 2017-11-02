@@ -19,7 +19,7 @@ RUN echo "ubuntu ALL=(ALL) NOPASSWD: ALL"  >> /etc/sudoers
 RUN echo "ubuntu:ubuntu" | chpasswd
 USER ubuntu
 workdir /home/ubuntu
-RUN git clone git@github.com:travelgeezer/emacs.d.git ~/.emacs.d/
+RUN git clone https://github.com/travelgeezer/emacs.d.git
 
 EXPOSE 9000 3141 22 5000
 
