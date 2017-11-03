@@ -22,7 +22,6 @@ workdir /home/ubuntu
 RUN git clone https://github.com/travelgeezer/emacs.d.git ~/.emacs.d
 RUN sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
 RUN sudo cp /usr/bin/pip3 /usr/bin/pip
-RUN pip install pipenv
 
 
 EXPOSE 9000 3141 22 5000
