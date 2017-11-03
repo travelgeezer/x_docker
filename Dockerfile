@@ -13,13 +13,17 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe 
     ' > /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install python3 curl wget git sudo vim emacs -yq
+RUN apt-get install python3 python-pip python3-dev python3-venv curl wget git sudo vim emacs -yq
 RUN useradd -ms /bin/bash ubuntu
 RUN echo "ubuntu ALL=(ALL) NOPASSWD: ALL"  >> /etc/sudoers
 RUN echo "ubuntu:ubuntu" | chpasswd
 USER ubuntu
 workdir /home/ubuntu
 RUN git clone https://github.com/travelgeezer/emacs.d.git ~/.emacs.d
+RUN sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+RUN sudo cp /usr/bin/pip3 /usr/bin/pip
+RUN pip install pipenv
+
 
 EXPOSE 9000 3141 22 5000
 
